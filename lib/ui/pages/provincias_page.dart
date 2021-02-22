@@ -37,7 +37,7 @@ class ProvinciasPage extends StatelessWidget {
       layout: SwiperLayout.STACK,
       fade: 2.0,
       viewportFraction: -10.0,
-      itemCount: _controller.provincias.length - 1,
+      itemCount: _controller.provincias.length,
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(

@@ -122,6 +122,11 @@ List<Provincias> listprovincia = [
     photo: 'assets/provincias/sucumbios.webp',
   ),
   Provincias(
+    namemodel: 'tungurahua',
+    namepresentation: 'Tungurahua',
+    photo: 'assets/provincias/tungurahua.webp',
+  ),
+  Provincias(
     namemodel: 'zamora',
     namepresentation: 'Zamora',
     photo: 'assets/provincias/zamora.webp',
