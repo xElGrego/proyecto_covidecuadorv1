@@ -17,6 +17,8 @@ class HomePage extends StatelessWidget {
   final CovidController controller = Get.put(CovidController());
   final Covid covid = Covid();
 
+  DateTime date = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -98,7 +100,7 @@ class HomePage extends StatelessWidget {
                                 style: kTitleTextstyle,
                               ),
                               TextSpan(
-                                text: "21/feb/2021",
+                                text: date.toString(),
                                 style: TextStyle(
                                   color: kTextLightColor,
                                 ),
