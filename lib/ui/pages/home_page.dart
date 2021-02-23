@@ -12,6 +12,7 @@ import 'package:proyecto_covidecuador/ui/widgets/box_infects.dart';
 import 'package:proyecto_covidecuador/ui/widgets/header.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+
 class HomePage extends StatelessWidget {
   final ProvinciasController provinciasController =
       Get.put(ProvinciasController());

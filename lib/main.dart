@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(CovidController());
     return GetMaterialApp(
+      
       title: 'Grego Covid App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
