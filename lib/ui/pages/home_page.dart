@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:proyecto_covidecuador/data/models/covid.dart';
 import 'package:proyecto_covidecuador/domain/controllers/covid_controller.dart';
 import 'package:proyecto_covidecuador/domain/controllers/provincia_controller.dart';
@@ -100,7 +101,7 @@ class HomePage extends StatelessWidget {
                                 style: kTitleTextstyle,
                               ),
                               TextSpan(
-                                text: date.toString(),
+                                text: DateFormat.yMMMd().format(date),
                                 style: TextStyle(
                                   color: kTextLightColor,
                                 ),
