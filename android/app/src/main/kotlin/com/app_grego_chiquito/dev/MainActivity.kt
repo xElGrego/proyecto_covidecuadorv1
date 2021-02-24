@@ -1,4 +1,4 @@
-package com.example.proyecto_covidecuador
+package com.app_grego_chiquito.dev
 
 import io.flutter.embedding.android.FlutterActivity
 
