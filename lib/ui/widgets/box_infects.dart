@@ -13,7 +13,6 @@ class BoxInfects extends StatelessWidget {
       padding: const EdgeInsets.only(right: 45.0),
       child: Column(
         children: [
-     
           Container(
             padding: EdgeInsets.all(6),
             height: 25,

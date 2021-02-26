@@ -12,11 +12,10 @@ import 'package:proyecto_covidecuador/ui/widgets/box_infects.dart';
 import 'package:proyecto_covidecuador/ui/widgets/header.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class HomePage extends StatelessWidget {
   final ProvinciasController provinciasController =
       Get.put(ProvinciasController());
-  final CovidController controller = Get.put(CovidController());
+  var controller = Get.put(CovidController());
   final Covid covid = Covid();
 
   DateTime date = DateTime.now();
@@ -54,41 +53,51 @@ class HomePage extends StatelessWidget {
                       height: 130,
                       child: Obx(
                         () {
-                          return ListView(
-                            scrollDirection: Axis.horizontal,
-                            children: [
-                              BoxInfects(
-                                color: kInfectedColor,
-                                number: controller.covid.value.totalConfirmados,
-                                title: 'Infectados por covid',
-                              ),
-                              BoxInfects(
-                                color: kDeathColor,
-                                number: controller.covid.value.totalFallecidos,
-                                title: 'Total Fallecidos',
-                              ),
-                              BoxInfects(
-                                color: kRecovercolor,
-                                number: controller.covid.value.totalRecuperados,
-                                title: 'Total Recuperados',
-                              ),
-                              BoxInfects(
-                                color: Colors.yellow,
-                                number: controller.covid.value.totalMuestrasPcr,
-                                title: 'Total muestras CPR',
-                              ),
-                              BoxInfects(
-                                color: Colors.blue,
-                                number: controller.covid.value.totalConfirmados,
-                                title: 'Total Descartados',
-                              ),
-                              BoxInfects(
-                                color: Colors.teal,
-                                number: controller.covid.value.totalConfirmados,
-                                title: 'Total Alta Hospitalaria',
-                              ),
-                            ],
-                          );
+                          return controller.covidloading.value
+                              ? Center(
+                                  child: CircularProgressIndicator(),
+                                )
+                              : ListView(
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    BoxInfects(
+                                      color: kInfectedColor,
+                                      number: controller
+                                          .covid.value.totalConfirmados,
+                                      title: 'Infectados por covid',
+                                    ),
+                                    BoxInfects(
+                                      color: kDeathColor,
+                                      number: controller
+                                          .covid.value.totalFallecidos,
+                                      title: 'Total Fallecidos',
+                                    ),
+                                    BoxInfects(
+                                      color: kRecovercolor,
+                                      number: controller
+                                          .covid.value.totalRecuperados,
+                                      title: 'Total Recuperados',
+                                    ),
+                                    BoxInfects(
+                                      color: Colors.yellow,
+                                      number: controller
+                                          .covid.value.totalMuestrasPcr,
+                                      title: 'Total muestras CPR',
+                                    ),
+                                    BoxInfects(
+                                      color: Colors.blue,
+                                      number: controller
+                                          .covid.value.totalConfirmados,
+                                      title: 'Total Descartados',
+                                    ),
+                                    BoxInfects(
+                                      color: Colors.teal,
+                                      number: controller
+                                          .covid.value.totalConfirmados,
+                                      title: 'Total Alta Hospitalaria',
+                                    ),
+                                  ],
+                                );
                         },
                       ),
                     ),
@@ -116,7 +125,7 @@ class HomePage extends StatelessWidget {
                             Get.to(InfoPage(), transition: Transition.fade);
                           },
                           child: Container(
-                          width: MediaQuery.of(context).size.width  / 3,
+                            width: MediaQuery.of(context).size.width / 3,
                             child: Text(
                               "¿Como prevenir?",
                               style: TextStyle(color: Colors.green),
@@ -131,7 +140,7 @@ class HomePage extends StatelessWidget {
                         Text("Informacion mapaeada"),
                         Spacer(),
                         FlatButton(
-                          minWidth: MediaQuery.of(context).size.width  / 3,
+                          minWidth: MediaQuery.of(context).size.width / 3,
                           onPressed: () {
                             Get.to(ProvinciasPage());
                           },
