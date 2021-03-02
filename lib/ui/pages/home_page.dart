@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:proyecto_covidecuador/data/models/covid.dart';
 import 'package:proyecto_covidecuador/domain/controllers/covid_controller.dart';
-import 'package:proyecto_covidecuador/domain/controllers/provincia_controller.dart';
 import 'package:proyecto_covidecuador/ui/constants/constants.dart';
 import 'package:proyecto_covidecuador/ui/pages/infoscreen_page.dart';
 import 'package:proyecto_covidecuador/ui/pages/provincias_page.dart';
@@ -13,10 +11,8 @@ import 'package:proyecto_covidecuador/ui/widgets/header.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
-  final ProvinciasController provinciasController =
-      Get.put(ProvinciasController());
-  var controller = Get.put(CovidController());
-  final Covid covid = Covid();
+  final controller = Get.put(CovidController());
+  Covid covid = Covid();
 
   DateTime date = DateTime.now();
 
@@ -25,15 +21,9 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("App Covid - Ecuador"),
+          title: Text("Info covid 19 - Ecuador"),
           backgroundColor: Colors.teal[200],
           elevation: 0,
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(right: 12.0),
-              child: SvgPicture.asset('assets/icons/menu.svg'),
-            ),
-          ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -55,7 +45,17 @@ class HomePage extends StatelessWidget {
                         () {
                           return controller.covidloading.value
                               ? Center(
-                                  child: CircularProgressIndicator(),
+                                  child: Column(
+                                    children: [
+                                      CircularProgressIndicator(),
+                                      SizedBox(height: 15),
+                                      Text(
+                                        "Cargando resultados...",
+                                        style:
+                                            Theme.of(context).textTheme.caption,
+                                      ),
+                                    ],
+                                  ),
                                 )
                               : ListView(
                                   scrollDirection: Axis.horizontal,
@@ -122,7 +122,7 @@ class HomePage extends StatelessWidget {
                         Spacer(),
                         FlatButton(
                           onPressed: () {
-                            Get.to(InfoPage(), transition: Transition.fade);
+                            Get.to(InfoPage(), transition: Transition.fadeIn);
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width / 3,

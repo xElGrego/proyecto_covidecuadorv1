@@ -26,20 +26,20 @@ class Covid {
     int totalDescartados;
 
     factory Covid.fromJson(Map<String, dynamic> json) => Covid(
-        totalMuestrasPcr: json["totalMuestrasPCR"],
-        totalFallecidos: json["totalFallecidos"],
-        totalConfirmados: json["totalConfirmados"],
+        totalMuestrasPcr:      json["totalMuestrasPCR"],
+        totalFallecidos:       json ["totalFallecidos"],
+        totalConfirmados:      json["totalConfirmados"],
         totalAltaHospitalaria: json["totalAltaHospitalaria"],
-        totalRecuperados: json["totalRecuperados"],
-        totalDescartados: json["totalDescartados"],
+        totalRecuperados:      json["totalRecuperados"],
+        totalDescartados:      json["totalDescartados"],
     );
 
     Map<String, dynamic> toJson() => {
-        "totalMuestrasPCR": totalMuestrasPcr,
-        "totalFallecidos": totalFallecidos,
-        "totalConfirmados": totalConfirmados,
-        "totalAltaHospitalaria": totalAltaHospitalaria,
-        "totalRecuperados": totalRecuperados,
-        "totalDescartados": totalDescartados,
+        "totalMuestrasPCR":       totalMuestrasPcr,
+        "totalFallecidos":        totalFallecidos,
+        "totalConfirmados":       totalConfirmados,
+        "totalAltaHospitalaria":  totalAltaHospitalaria,
+        "totalRecuperados":       totalRecuperados,
+        "totalDescartados":       totalDescartados,
     };
 }

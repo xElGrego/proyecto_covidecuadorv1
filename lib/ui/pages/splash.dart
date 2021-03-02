@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import 'package:proyecto_covidecuador/domain/controllers/splash_controller.dart';
 
-
 class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -84,6 +83,21 @@ class SplashPage extends StatelessWidget {
                           ),
                           Text(
                             "-  Developer Backend",
+                            style: (TextStyle(
+                              color: Colors.black,
+                            )),
+                          ),
+                          Text(
+                            "Mario Gonzales",
+                            style: (TextStyle(
+                              color: Colors.black,
+                            )),
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Text(
+                            "-  Desing UI/UX",
                             style: (TextStyle(
                               color: Colors.black,
                             )),

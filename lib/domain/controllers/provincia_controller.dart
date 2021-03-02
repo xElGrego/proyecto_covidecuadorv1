@@ -6,6 +6,7 @@ import 'package:proyecto_covidecuador/domain/entities/services_covid.dart';
 
 class ProvinciasController extends GetxController {
   var provincias = List<Provincias>().obs;
+  var loadingprovincias = true.obs;
 
   @override
   void onInit() {
@@ -17,15 +18,18 @@ class ProvinciasController extends GetxController {
   // ignore: missing_return
   Future<List<Provincias>> fecthprovincias() async {
     try {
+      loadingprovincias.value = true;
       var provincia = await RemoteServices.fetchprovincias();
       if (provincia!= null) {
         provincias = provincia.obs;
         return provincias;
       }
-    } catch (e) {
-      print(e);
-      // ignore: control_flow_in_finally
-      return null;
+      else{
+        print(null);
+      }
+    } finally  {
+      loadingprovincias.value = false;
     }
+     update();
   }
 }

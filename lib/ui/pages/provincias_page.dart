@@ -23,7 +23,20 @@ class ProvinciasPage extends StatelessWidget {
       body: Center(
         child: Container(
           height: 300,
-          child: _listadoProvincias(),
+          child: Obx(() {
+            return _controller.loadingprovincias.value
+                ? Center(
+                    child: Column(
+                      children: [
+                        CircularProgressIndicator(),
+                        SizedBox(height: 15),
+                        Text("Cargando resultados...",
+                            style: Theme.of(context).textTheme.caption)
+                      ],
+                    ),
+                  )
+                : _listadoProvincias();
+          }),
         ),
       ),
     );

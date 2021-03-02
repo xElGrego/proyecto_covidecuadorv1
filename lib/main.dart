@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:proyecto_covidecuador/ui/constants/constants.dart';
 import 'package:proyecto_covidecuador/ui/pages/splash.dart';
 
-import 'domain/controllers/covid_controller.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,10 +12,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(CovidController());
+  
     return GetMaterialApp(
-      
-      title: 'Grego Covid App',
+      transitionDuration: Duration(seconds: 1.5.toInt()),
+      defaultTransition: Transition.rightToLeftWithFade,
+      title: 'Info Covid19 - Ecuador',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
