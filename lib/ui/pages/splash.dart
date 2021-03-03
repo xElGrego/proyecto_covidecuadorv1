@@ -87,8 +87,13 @@ class SplashPage extends StatelessWidget {
                               color: Colors.black,
                             )),
                           ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
                           Text(
-                            "Mario Gonzales",
+                            "Mario González",
                             style: (TextStyle(
                               color: Colors.black,
                             )),

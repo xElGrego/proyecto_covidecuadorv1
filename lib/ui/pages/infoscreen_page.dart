@@ -60,16 +60,16 @@ class _InfoScreenState extends State<InfoPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         SymptomCard(
-                          image: "assets/images/headache.png",
+                          image: "assets/images/dolordecabeza.GIF",
                           title: "Dolor de cabeza",
                           isActive: true,
                         ),
                         SymptomCard(
-                          image: "assets/images/caugh.png",
+                          image: "assets/images/estornudo.gif",
                           title: "Resfriado",
                         ),
                         SymptomCard(
-                          image: "assets/images/fever.png",
+                          image: "assets/images/fiebre.gif",
                           title: "Fiebre",
                         ),
                       ],
