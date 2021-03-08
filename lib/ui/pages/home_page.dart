@@ -10,6 +10,7 @@ import 'package:proyecto_covidecuador/ui/widgets/box_infects.dart';
 import 'package:proyecto_covidecuador/ui/widgets/header.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatelessWidget {
   final controller = Get.put(CovidController());
   Covid covid = Covid();
@@ -51,8 +52,7 @@ class HomePage extends StatelessWidget {
                                       SizedBox(height: 15),
                                       Text(
                                         "Cargando resultados...",
-                                        style:
-                                            Theme.of(context).textTheme.caption,
+                                        style: Theme.of(context).textTheme.caption,
                                       ),
                                     ],
                                   ),
@@ -62,38 +62,32 @@ class HomePage extends StatelessWidget {
                                   children: [
                                     BoxInfects(
                                       color: kInfectedColor,
-                                      number: controller
-                                          .covid.value.totalConfirmados,
+                                      number: controller.covid.value.totalConfirmados,
                                       title: 'Infectados por covid',
                                     ),
                                     BoxInfects(
                                       color: kDeathColor,
-                                      number: controller
-                                          .covid.value.totalFallecidos,
+                                      number: controller.covid.value.totalFallecidos,
                                       title: 'Total Fallecidos',
                                     ),
                                     BoxInfects(
                                       color: kRecovercolor,
-                                      number: controller
-                                          .covid.value.totalRecuperados,
+                                      number: controller.covid.value.totalRecuperados,
                                       title: 'Total Recuperados',
                                     ),
                                     BoxInfects(
                                       color: Colors.yellow,
-                                      number: controller
-                                          .covid.value.totalMuestrasPcr,
+                                      number: controller.covid.value.totalMuestrasPcr,
                                       title: 'Total muestras CPR',
                                     ),
                                     BoxInfects(
                                       color: Colors.blue,
-                                      number: controller
-                                          .covid.value.totalConfirmados,
+                                      number: controller.covid.value.totalConfirmados,
                                       title: 'Total Descartados',
                                     ),
                                     BoxInfects(
                                       color: Colors.teal,
-                                      number: controller
-                                          .covid.value.totalConfirmados,
+                                      number: controller.covid.value.totalConfirmados,
                                       title: 'Total Alta Hospitalaria',
                                     ),
                                   ],
@@ -120,7 +114,7 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                         Spacer(),
-                        FlatButton(
+                        TextButton(
                           onPressed: () {
                             Get.to(InfoPage(), transition: Transition.fadeIn);
                           },
@@ -139,8 +133,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text("Informacion mapaeada"),
                         Spacer(),
-                        FlatButton(
-                          minWidth: MediaQuery.of(context).size.width / 3,
+                        TextButton(
                           onPressed: () {
                             Get.to(ProvinciasPage());
                           },

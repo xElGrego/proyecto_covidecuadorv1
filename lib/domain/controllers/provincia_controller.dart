@@ -5,6 +5,7 @@ import 'package:proyecto_covidecuador/domain/entities/services_covid.dart';
 
 
 class ProvinciasController extends GetxController {
+  // ignore: deprecated_member_use
   var provincias = List<Provincias>().obs;
   var loadingprovincias = true.obs;
 
