@@ -102,7 +102,7 @@ class SplashPage extends StatelessWidget {
                             width: 15.0,
                           ),
                           Text(
-                            "-  Desing UI/UX",
+                            "-  Design UI/UX",
                             style: (TextStyle(
                               color: Colors.black,
                             )),
